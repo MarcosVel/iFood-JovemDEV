@@ -13,7 +13,7 @@ import {
 import api from '../../services/api';
 
 export default function Categories() {
-  const [categories, setCategories] = useState([]);
+  const [ categories, setCategories ] = useState([]);
 
   useEffect(() => {
     async function loadCategories() {
@@ -25,7 +25,19 @@ export default function Categories() {
 
   return (
     <Container>
-     
+      <Header>
+        <Title>Categorias</Title>
+      </Header>
+
+      <CategoriesList horizontal>
+        { categories.map(item => (
+          <Item key={ item.id } >
+            <ItemImage source={ { uri: item.categorie_url } } />
+            <ItemTitle>{ item.title }</ItemTitle>
+          </Item>
+        )) }
+      </CategoriesList>
+
     </Container>
   );
 }
