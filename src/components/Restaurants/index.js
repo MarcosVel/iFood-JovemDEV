@@ -13,7 +13,6 @@ import {
   ItemTitle,
   ItemDescription,
   Star,
-  Categories,
   Distance,
   Delay,
 } from './styles';
@@ -21,7 +20,7 @@ import {
 import api from '../../services/api';
 
 export default function Restaurants({ title, display }) {
-  const [restaurants, setRestaurants] = useState([]);
+  const [ restaurants, setRestaurants ] = useState([]);
 
   useEffect(() => {
     async function loadRestaurants() {
@@ -34,7 +33,26 @@ export default function Restaurants({ title, display }) {
 
   return (
     <Container>
-     
+      <Header display={display}>
+        <Title>Restaurantes</Title>
+      </Header>
+
+      <RestaurantList>
+        {restaurants.map(item => (
+          <Item key={ item.id }>
+            <ItemImage source={ { uri: item.restaurant_url } } />
+            <ItemInfo>
+              <ItemTitle>{ item.title }</ItemTitle>
+              <ItemDescription>
+                <MaterialIcons name="star" size={ 20 } color="#ff7b00" />
+                <Star>{ item.star ? item.star : 'Novo!' }</Star>
+                <Distance>{ item.distance }</Distance>
+              </ItemDescription>
+              <Delay>{ item.time }</Delay>
+            </ItemInfo>
+          </Item>
+        )) }
+      </RestaurantList>
     </Container>
   );
 }
