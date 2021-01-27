@@ -32,7 +32,7 @@ export const SeeMoreText = styled.Text`
 export const OfferList = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: false
 })`
-  padding-left: 20px;
+  margin-left: 20px;
 `;
 
 export const Item = styled.TouchableOpacity`

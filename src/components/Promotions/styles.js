@@ -4,11 +4,11 @@ export const PromoList = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: false,
 })`
   margin: 20px 0;
-  padding-left: 5px;
+  margin-left: 20px;
 `;
 
 export const Item = styled.TouchableOpacity`
-  margin-left: 15px;
+  margin-right: 15px;
 `;
 
 export const PromoImage = styled.Image`

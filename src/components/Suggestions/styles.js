@@ -4,12 +4,12 @@ export const SuggestionList = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: false,
 })`
   margin-top: 20px;
-  padding-left: 5px;
+  margin-left: 20px;
 `;
 
 export const Item = styled.TouchableOpacity`
   align-items: center;
-  margin-left: 15px;
+  margin-right: 15px;
 `;
 
 export const SuggestionImage = styled.Image`

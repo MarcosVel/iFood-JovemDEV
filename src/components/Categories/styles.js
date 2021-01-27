@@ -17,7 +17,7 @@ export const CategoriesList = styled.ScrollView.attrs({
   showsHorizontalScrollIndicator: false,
 })`
   margin-top: 10px;
-  padding-left: 20px;
+  margin-left: 20px;
 `;
 
 export const Item = styled.TouchableOpacity`
